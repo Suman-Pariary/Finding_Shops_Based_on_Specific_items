@@ -1,0 +1,92 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <h3><b><u>Create a new listing</u></b></h3>
+    <form method="POST" 
+    action="/listings" 
+    novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title"   class="form-label"><b>Title</b></label>
+            <input 
+            name="listing[title]" 
+            placeholder="enter title" 
+            type="text" 
+            class="form-control"
+            required/>
+            <div class="valid-feedback">Title look's good</div>
+            <div class="invalid-feedback">Please enter a title</div>
+    
+    </div>
+        <div class="mb-3">
+            <label for="description" class="form-label"><b>Description</b></label>
+            <textarea 
+                name="listing[description]"
+                class="form-control"
+                required>
+            </textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label"><b>Upload Listing Image</b></label>
+            <input name="listing[image]"  
+            type="file" 
+            class="form-control" 
+            required />
+            <div class="invalid-feedback">Please Give a valid Description</div>
+        </div>
+
+        <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="license" class="form-label"><b>License no:</b></label>
+            <input name="listing[license]" placeholder="enter license no" 
+            type="text"
+            class="form-control"
+            required/>
+            <div class="invalid-feedback">Please enter a valid license no</div>
+        </div>
+        
+        <div class="mb-3 col-md-4">
+            <div class="dropdown">
+                <label for="storeType" class="form-label"><b>Type of Store</b></label>
+                <select name="listing[storeType]" id="storeType" class="form-select" required>
+                    <option value="">Select...</option>
+                    <option value="grocery">Grocery store</option>
+                    <option value="x-rox">X-rox store</option>
+                    <option value="book">Book store</option>
+                    <option value="meat">Meat shop</option>
+                    <option value="fish">Fish shop</option>
+                    <option value="electrical">Electrical store</option>
+                    <option value="shoe">Shoe shop</option>
+                    <option value="machine">Machine Repearing shop</option>
+                    <option value="cycle">Cycle Repearing shop</option>
+                    <option value="salon">Salon shop</option>
+                    <option value="mobile">Mobile Repearing shop</option>
+                    <option value="medicine">Medicine shop</option>
+                    <option value="cloth">Cloth store</option>
+                    <option value="jewelry">jewelry store</option>
+                    <option value="stationary">Stationary shop</option>
+                    <option value="food">Varities Food shop</option>
+                    <option value="oil">Indian Oil</option>
+                    <option value="atm">ATM</option>
+                </select>
+                <div class="invalid-feedback">Please select a valid store type</div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="location" class="form-label"><b>Location</b></label>
+            <input name="listing[location]" 
+            placeholder="enter location" 
+            type="text" 
+            class="form-control"
+            required>
+            <div class="invalid-feedback">Please enter a valid location</div>
+        </div>
+        <button class="btn btn-dark add-btn mt-3">Add</button>
+        <br><br>
+    </form>
+    </div>
+    </div>
+</body>

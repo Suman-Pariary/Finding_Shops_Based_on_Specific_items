@@ -1,0 +1,113 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <style>
+        #filters {
+            
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filter {
+            margin-top: 1rem;
+            text-align: center;
+            margin-right: 2rem;
+            margin-top: 2rem;
+            opacity: 0.7;
+        }
+        .filter:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    </style>
+    <div id="filters">
+        <div class="filter">
+            <div><i class="fa-regular fa-newspaper"></i></div>
+            <p>X-erox</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-book-atlas"></i></div>
+            <p>Book</p>
+            </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-basket-shopping"></i></div>
+            <p>Grocery</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-drumstick-bite"></i></div>
+            <p>Meat</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-fish-fins"></i></div>
+            <p>Fish</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-lightbulb"></i></div>
+            <p>Electrical</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-shoe-prints"></i></div>
+            <p>Shoe</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-regular fa-hard-drive"></i></div>
+            <p>Machine</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-bicycle"></i></div>
+            <p>Cycle</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-wheelchair"></i></div>
+            <p>Salon</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <p>Mobile</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-house-chimney-medical"></i></div>
+            <p>Medicine</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-shirt"></i></div>
+            <p>Cloth</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-gem"></i></i></div>
+            <p>jewelry</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-user-tie"></i></div>
+            <p>Stationary</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-utensils"></i></div>
+            <p>Food</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-gas-pump"></i></div>
+            <p>Indian Oil</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-brands fa-cc-visa"></i></div>
+            <p>ATM</p>
+        </div>
+    </div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% for(let listing of allListings) { %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+            <div class="card col listing-card">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+                <div class="card-img-overlay"><b>Welcome</b></div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title%></b>
+                            <br>
+                        <b>
+                            Place:-</b><%= listing.location%>
+                        
+                    </p>
+                </div>
+            </div>
+            <% } %>
+    </div>
+</body>

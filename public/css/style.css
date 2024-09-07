@@ -1,0 +1,110 @@
+body {
+    font-family: "Trirong", serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} 
+.container {
+    flex: 1;
+}
+.navbar {
+    height: 5rem;
+}
+
+.fa-soundcloud {
+    color: rgb(106, 136, 170);
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: peru !important;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: black !important;
+}
+
+.f-info-links a:hover {
+    color: burlywood !important;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Cards */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+    color: black !important;
+}
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.1;
+    background-color: white;
+}
+
+/* Edit page */
+.add-btn,
+.edit-btn,
+.delete-btn {
+    background-color: rgb(106, 136, 170) !important;
+    border: none !important;
+}
+
+/* show page */
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}

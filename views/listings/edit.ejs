@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <h3><b><u>Edit this listing</u></b></h3>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label"><b>Title</b></label>
+        <input 
+            name="listing[title]" 
+            value="<%= listing.title %>" type="text" class="form-control"
+            required/>
+            <div class="invalid-feedback">Title</Title></div> 
+        </div>
+        <div class="mb-3">
+            <label for="description"
+            class="form-label"><b>Description</b></label>
+            <textarea name="listing[description]" class="form-control"
+            required><%= listing.description %> </textarea>
+            <div class="invalid-feedback">Give a Short Description</Title>
+            </div>
+        </div>
+        <div class="mb-3">
+            <b>Orginal Listing Image</b><br>
+            <img src="<%= orginalImageUrl %>" />
+            </div>
+        <div class="mb-3">
+            <label for="image" class="form-label"><b>Upload new Image</b></label>
+            <input name="listing[image]" type="file" class="form-control" 
+            />
+        </div>
+        <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="license" class="form-label"><b>License no:</b></label>
+            <input name="listing[license]" value="<%= listing.license %>" type="text" class="form-control" 
+            required/>
+            <div class="invalid-feedback">Give a license no</Title>
+            </div>
+        </div>
+    
+        <div class="mb-3 col-md-4">
+            <div class="dropdown">
+                <label for="storeType" class="form-label"><b>Type of Store</b></label>
+                <select name="listing[storeType]" id="storeType" class="form-select" required>
+                    <option value="">Select...</option>
+                    <option value="grocery">Grocery store</option>
+                    <option value="x-rox">X-rox store</option>
+                    <option value="book">Book store</option>
+                    <option value="meat">Meat shop</option>
+                    <option value="fish">Fish shop</option>
+                    <option value="electrical">Electrical store</option>
+                    <option value="shoe">Shoe shop</option>
+                    <option value="machine">Machine Repearing shop</option>
+                    <option value="cycle">Cycle Repearing shop</option>
+                    <option value="salon">Salon shop</option>
+                    <option value="mobile">Mobile Repearing shop</option>
+                    <option value="medicine">Medicine shop</option>
+                    <option value="cloth">Cloth store</option>
+                    <option value="jewelry">jewelry store</option>
+                    <option value="stationary">Stationary shop</option>
+                    <option value="food">Varities Food shop</option>
+                    <option value="oil">Indian Oil</option>
+                    <option value="atm">ATM</option>
+                </select>
+                <div class="invalid-feedback">Please select a valid store type</div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="location" class="form-label"><b>Location</b></label>
+            <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control"
+            required/>
+            <div class="invalid-feedback">Give your Location here</Title>
+            </div>
+        </div>
+        <button class="btn btn-dark edit-btn mt-3">Edit</button>
+    </form>
+    </div>
+    </div>
+</body>
